@@ -1,7 +1,3 @@
-1. Paste this into your README.md
-Open README.md in GitHub (click the pencil icon) and replace its contents with:
-
-text
 # Tabby AI Coding Agent MLOps (CPU-Only, WSL2 + Ollama)
 
 This project is a self-hosted AI coding agent platform built around **TabbyML** and **Ollama**, deployed on a **WSL2 CPU-only** environment. It documents how multiple architectures were designed, broken, and rebuilt until a stable, multi-model setup was achieved.
