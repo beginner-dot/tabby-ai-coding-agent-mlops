@@ -205,3 +205,26 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+
+# ==========================================
+# TabbyML & Ollama Specifics
+# ==========================================
+
+# Ignore the Tabby binary itself (it's a large executable)
+# If your binary is named differently (e.g., tabby_x86_64), adjust this.
+tabby
+tabby_*
+
+# Ignore the Tabby local data directory
+# This contains indexes, local logs, and cached models.
+.tabby/
+
+# Ignore any local model files if you downloaded them directly into the repo
+*.gguf
+*.bin
+models/
+
+# Ignore temporary diagnostic logs
+DIAGNOSTIC_LOG.md
+*.log
