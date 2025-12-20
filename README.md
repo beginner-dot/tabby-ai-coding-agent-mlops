@@ -48,7 +48,7 @@ Note: The model_name values must match the output of ollama list on your machine
 🚀 Launch Script (inside WSL2)
 Create a file named launch_tabby.sh with the following content:
 
-Bash
+```Bash
 
 #!/usr/bin/env bash
 
@@ -61,7 +61,10 @@ sudo RUST_LOG=debug "${TABBY_BIN}" serve \
   --device cpu \
   --host "${TABBY_HOST_IP}" \
   --config "${TABBY_CONFIG}"
+  ```
+  
 Dashboard: Accessible from the Windows host browser at: http://172.18.217.209:8080
+
 
 🧭 MLOps Journey: Three Architectures
 1. Docker Container (Abandoned)
@@ -99,19 +102,21 @@ Install WSL2 + Ubuntu on Windows.
 
 Install Ollama and pull models:
 
-Bash
+```Bash
 
 ollama pull llama3:8b
 ollama pull mistral:7b
 ollama pull nomic-embed-text
+```
 Configure: Place config.toml and launch_tabby.sh in your Tabby directory.
 
 Execute:
 
-Bash
+```Bash
 
 chmod +x launch_tabby.sh
 ./launch_tabby.sh
+```
 Verify: Open http://172.18.217.209:8080 in your Windows browser.
 Verify: Open http://172.18.217.209:8080 in your Windows browser.
 
