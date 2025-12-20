@@ -18,6 +18,8 @@ This stable architecture resolves the earlier Docker and CLI-only failures.
   - `mistral:7b` – Chat
   - `nomic-embed-text` – Embeddings
 
+
+
 ### ⚙️ Example `config.toml` (Setup 3 Solution)
 This configuration file explicitly routes each AI role to the correct local Ollama API endpoint.
 
@@ -92,8 +94,13 @@ Credential Hygiene: Resolved a Windows credential conflict that was restricting 
 🛠 How to Use This Repo
 Install WSL2 + Ubuntu on Windows.
 
-Install Ollama and pull models: ollama pull llama3:8b, mistral:7b, and nomic-embed-text.
+Install Ollama and pull models:
 
+Bash
+
+ollama pull llama3:8b
+ollama pull mistral:7b
+ollama pull nomic-embed-text
 Configure: Place config.toml and launch_tabby.sh in your Tabby directory.
 
 Execute:
@@ -102,6 +109,7 @@ Bash
 
 chmod +x launch_tabby.sh
 ./launch_tabby.sh
+Verify: Open http://172.18.217.209:8080 in your Windows browser.
 Verify: Open http://172.18.217.209:8080 in your Windows browser.
 
 
