@@ -43,6 +43,8 @@ api_endpoint = "http://localhost:11435"
 
 Note: The model_name values must match the output of ollama list on your machine exactly.
 
+```
+
 🚀 Launch Script (inside WSL2)
 Create a file named launch_tabby.sh with the following content:
 
