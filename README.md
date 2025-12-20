@@ -20,9 +20,16 @@ This stable architecture resolves the earlier Docker and CLI-only failures.
   - `nomic-embed-text` – Embeddings
 - **Routing** explicitly controlled via a `config.toml` override file that forces Tabby to talk to the local Ollama API instead of an external registry.
 
-**Example `config.toml` (simplified):**
 
---- Tabby AI Agent Configuration: Ollama Integration ---
+
+
+### Example `config.toml` (Setup 3 Solution):
+
+This configuration file is the "brain" of the setup. It explicitly routes each AI role to the correct local Ollama API endpoint.
+
+```toml
+# --- Tabby AI Agent Configuration: Ollama Integration ---
+
 [model.completion.http]
 kind = "ollama/completion"
 model_name = "llama3:8b"
@@ -38,8 +45,10 @@ kind = "ollama/embedding"
 model_name = "nomic-embed-text"
 api_endpoint = "http://localhost:11435"
 
-
 > The `model_name` values must match the output of `ollama list` on your machine.
+
+
+
 
 **Launch script (inside WSL2):**
 
