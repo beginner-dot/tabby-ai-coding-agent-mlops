@@ -1,0 +1,16 @@
+# --- Tabby MLOps Configuration ---
+
+[model.completion.http]
+kind = "ollama/completion"
+model_name = "llama3:8b"
+api_endpoint = "http://localhost:11435"
+
+[model.chat.http]
+kind = "ollama/chat"
+model_name = "mistral:7b"
+api_endpoint = "http://localhost:11435"
+
+[model.embedding.http]
+kind = "ollama/embedding"
+model_name = "nomic-embed-text"
+api_endpoint = "http://localhost:11435"
