@@ -40,6 +40,7 @@ api_endpoint = "http://localhost:11435"
 kind = "ollama/embedding"
 model_name = "nomic-embed-text"
 api_endpoint = "http://localhost:11435"
+
 Note: The model_name values must match the output of ollama list on your machine exactly.
 
 🚀 Launch Script (inside WSL2)
