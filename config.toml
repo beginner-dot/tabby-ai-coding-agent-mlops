@@ -14,3 +14,7 @@ api_endpoint = "http://localhost:11435"
 kind = "ollama/embedding"
 model_name = "nomic-embed-text"
 api_endpoint = "http://localhost:11435"
+
+
+# NOTE: If CPU usage is too high, consider using a smaller 'tiny' 
+# model for completion and keeping the larger model for Chat.
