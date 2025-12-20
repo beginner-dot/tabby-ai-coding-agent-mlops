@@ -8,18 +8,18 @@ The goal: run a local AI coding assistant with **code completion**, **chat**, an
 
 ## ✅ Final Architecture (Setup 3 – Native Binary + `config.toml`)
 
-This stable architecture resolves the earlier Docker and CLI-only failures by bypassing external registry checks and forcing local routing.
+This stable architecture resolves the earlier Docker and CLI-only failures.
 
 **Stack:**
 - **TabbyML:** Native binary (v0.31.2) running inside WSL2 Ubuntu.
 - **Ollama:** Serving three LLM models on a non-default port (`11435`).
-- **Model Roles (via Ollama):**
+- **Model roles (via Ollama):**
   - `llama3:8b` – Completion
   - `mistral:7b` – Chat
   - `nomic-embed-text` – Embeddings
 
-### ⚙️ Final `config.toml` (Setup 3 Solution)
-This configuration file is the "brain" of the setup. It explicitly routes each AI role to the correct local Ollama API endpoint.
+### ⚙️ Example `config.toml` (Setup 3 Solution)
+This configuration file explicitly routes each AI role to the correct local Ollama API endpoint.
 
 ```toml
 # --- Tabby AI Agent Configuration: Ollama Integration ---
@@ -85,23 +85,24 @@ Diagnostic Stack:
 
 Used curl for HTTP-level health checks.
 
-Used nc -v <IP> 8080 (netcat) to confirm raw TCP connectivity, separating network issues from app config problems.
+Used nc -v 172.18.217.209 8080 (netcat) to confirm raw TCP connectivity.
 
-Credential Hygiene: Resolved a Windows/Microsoft Account credential conflict that was restricting WSL2 socket permissions.
+Credential Hygiene: Resolved a Windows credential conflict that was restricting WSL2 socket permissions.
 
 🛠 How to Use This Repo
 Install WSL2 + Ubuntu on Windows.
 
-Install Ollama and pull models:
-
-ollama pull llama3:8b
-
-ollama pull mistral:7b
-
-ollama pull nomic-embed-text
+Install Ollama and pull models: ollama pull llama3:8b, mistral:7b, and nomic-embed-text.
 
 Configure: Place config.toml and launch_tabby.sh in your Tabby directory.
 
-Execute: ```bash chmod +x launch_tabby.sh ./launch_tabby.sh
+Execute:
 
+Bash
+
+chmod +x launch_tabby.sh
+./launch_tabby.sh
 Verify: Open http://172.18.217.209:8080 in your Windows browser.
+
+
+---
